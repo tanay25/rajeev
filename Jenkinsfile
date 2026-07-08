@@ -9,8 +9,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'apt install -y python3-pip'
-                sh 'pip install -r requirements.txt'
+                sh 'python3 -m pip install -r requirements.txt'
             }
         }
         stage('Run Test') {
