@@ -40,7 +40,7 @@ pipeline {
                 sh '''
                     docker stop rajeev || true
                     docker rm rajeev || true
-                    docker run -d -p 5000:5000 --name rajeev tanay25/rajeev:latest
+                    docker run -d -p 5000:5000 --name rajeev rajeev:latest
                 '''
             }
         }
