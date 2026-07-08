@@ -21,7 +21,7 @@ pipeline {
         stage('Run Test') {
             steps {
                 echo 'Testing...'
-                sh 'pytest test_app.py'
+                sh 'pytest'
             }
         }
         stage('Build') {
