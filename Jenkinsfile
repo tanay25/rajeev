@@ -32,15 +32,15 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'docker build  -t tanay25/rajeev:latest .'
+                sh 'docker build  -t rajeev:latest .'
             }
         }
         stage("Run Container") {
             steps {
                 sh '''
-                    docker stop tanay25/rajeev || true
-                    docker rm tanay25/rajeev || true
-                    docker run -d -p 5000:5000 --name tanay25/rajeev tanay25/rajeev:latest
+                    docker stop rajeev || true
+                    docker rm rajeev || true
+                    docker run -d -p 5000:5000 --name rajeev tanay25/rajeev:latest
                 '''
             }
         }
