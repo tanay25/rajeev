@@ -20,8 +20,13 @@ pipeline {
         }
         stage('Run Test') {
             steps {
-                echo 'Testing...'
-                sh 'pytest'
+                sh '''
+                python3 -m venv venv
+                . venv/bin/activate
+    
+                pytest test_app.py
+                ''' 
+                
             }
         }
         stage('Build') {
